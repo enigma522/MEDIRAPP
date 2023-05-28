@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChatController!{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href={{ asset('chat.css') }}>
+{% endblock %}
+
+{% block root %}
+<div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card chat-app">
+                    <div id="plist" class="people-list">
+                        <ul class="list-unstyled chat-list mt-2 mb-0">
+                        {% for user in friends %}
+                            <li class="clearfix user" data-userid="{{user.id}}" >
+                                <img src="avatar.svg" alt="avatar" data-userid="{{user.id}}">
+                                <div class="about">
+                                    <a class="name" data-userid="{{user.id}}">{{user.firstname}} {{user.lastname}}</a>
+                                </div>
+                            </li>
+                        {% endfor %}    
+                        </ul>
+                    </div>
+                    <div class="chat">
+                        
+                        <div class="chat-history">
+                            <ul class="m-b-0" id="chat">
+                            
+                                
+                            </ul>
+                        </div>
+                        <form class="chat-message clearfix">
+                            <div class="input-group mb-0">
+                                
+                                <input type="text" id="msg" class="form-control" placeholder="Enter text here...">
+                                <i class="fa-solid fa-paper-plane-top"></i>
+                                <button type="submit" value="" id="sendBtn" disabled></button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <input type=hidden id="user_token" value="{{app.session.get('user_token')}}"/>
+            <input type=hidden id="user_id" value="{{app.session.get('id')}}"/>
+            <input type=hidden id="is_active_chat" value="NO"/>
+        </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src={{ asset('chat.js') }}></script>
+{% endblock %}

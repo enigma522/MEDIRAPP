@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% use 'bootstrap_5_horizontal_layout.html.twig' %}
+
+{% block title %}Hello MedecinController!
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/Profile.css') }}">
+{% endblock %}
+
+{% block root %}
+
+	<div class="container">
+		<div class="first">
+			<div class="second">
+				<h1 class="third">
+					<span class="forth">P</span>rofile
+				</h1>
+				{{ form(form) }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset('js/profile.js') }}" defer></script>
+{% endblock %}

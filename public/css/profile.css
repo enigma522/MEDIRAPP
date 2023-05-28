@@ -1,0 +1,45 @@
+
+.first {
+    margin: 2rem 0px 4rem 0px;
+    padding: 2rem 4rem;
+  }
+  
+  .second {
+    background: #f7f0f5;
+    padding: 1rem 2rem;
+    box-shadow: 0px 0px 20px 3px lightgray;
+    border-radius: 2rem;
+  }
+  
+  .third {
+    color: #495867;
+  }
+  
+  .forth {
+    text-decoration: underline 2px;
+  }
+  
+  div.second label[for^="patient_"] {
+    color: #2B061E;
+  }
+  
+  .custom-btn {
+    width: 100%;
+    background-color: #137c8b !important;
+    border-radius: 2rem !important;
+    border-color: transparent !important;
+    color: white !important;
+    font-size: 1.25rem !important;
+    font-family: 'Source Sans Pro';
+  }
+  
+  .custom-btn:hover {
+    background-color: #137c8ba6 !important;
+  }
+  
+  div.second input {
+    border-radius: 0.5rem;
+  }
+  .ma{
+    margin-top: 20px;
+  }

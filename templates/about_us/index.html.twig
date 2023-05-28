@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}A propos{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        <link rel="stylesheet" href="/css/aboutUs.css">
+        <link rel="stylesheet" href="style.css">
+
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+
+
+
+
+
+<body class="bg-black">
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container">
+        <div class="mb-2" ><img src="logo/logo1.png" class="w-25 h-50" /></div><br>
+        <h1>your health is your wealth</h1>
+        <h2>Bienvenue sur MediRapp, votre assistant numérique pour gérer votre traitement médicamenteux efficacement</h2><br><br>
+        {%if not app.user%} 
+        <h2> Veuillez s'inscrire pour bénificez de nos services</h2>
+        <div class="mb-2"><a href="{{ path('app_login') }}" class="btn-get-started scrollto text-decoration-none ">Log in</a></div><br/><br/><br/>
+        {% endif%}
+        {%if is_granted('ROLE_PATIENT')%} 
+        <div class="mb-2"><a href="{{ path('app_calendar') }}" class="btn-get-started scrollto text-decoration-none ">Calendrier</a></div><br/><br/><br/>
+        {% endif%}
+        {% if is_granted('ROLE_MEDECIN') %}
+        <div class="mb-2"><a href="{{ path('app_mespat') }}" class="btn-get-started scrollto text-decoration-none ">Mes patients</a></div><br/><br/><br/>
+        {% endif%}
+
+          
+
+    </div>
+</section>
+
+
+
+<main id="main">
+
+<section id="why-us" class="why-us">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">
+                    <h3>Welcome to mediRapp </h3>
+                    <p>
+                        Notre application MediRapp permet aux médecins de rappeler leurs patients de prendre leurs médicaments pour une période donnée,
+                        et permet également aux patients de se rappeler eux-mêmes de prendre leurs médicaments à temps
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-8 d-flex align-items-stretch">
+                <div class="icon-boxes d-flex flex-column justify-content-center">
+                    <div class="row">
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-receipt"></i>
+                                <h4>Qui somme nous</h4>
+                                <p>Nous sommes une équipe passionnée par la santé et la technologie.
+                                    Notre équipe est composée de professionnels de la santé et de développeurs expérimentés qui travaillent ensemble pour offrir une solution simple,
+                                    pratique et efficace pour la gestion de la prise de médicaments.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-cube-alt"></i>
+                                <h4>Notre mission </h4>
+                                <p>Notre mission est d'aider les médecins et les patients à mieux gérer leur traitement médicamenteux en leur offrant une solution qui facilite la prise de médicaments. Nous croyons que cette application peut aider à améliorer la santé des patients en
+                                    réduisant les erreurs de prise de médicaments et en assurant une meilleure adhérence aux traitements prescrits.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <i class="bx bx-images"></i>
+                                <h4>notre but </h4>
+                                <p>Nous sommes impatients de travailler avec vous pour améliorer la santé de vos patients.
+                                    Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter.</p>
+                                    <a  href="{{path('app_contact')}}"><button type="button" class="btn btn-light">contact</button></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+</main>
+</body>
+</html>

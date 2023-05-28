@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% use 'bootstrap_5_layout.html.twig'%}
+
+{% block title %}Hello OchrobDwekController!
+{% endblock %}
+{%block stylesheets
+ %}
+
+	<link rel="stylesheet" href={{ asset('css/Profile.css') }}>
+{% endblock %}
+{% block root %}
+<div class="container">
+		<div class="first">
+			<div class="second">
+				<h1 class="third">
+					<span class="forth">O</span>chrob dwek
+				</h1>
+				{{ form(form) }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+{% block javascript  %}
+	<script src="{{ asset('js/Profile.js') }}"></script>
+{% endblock %}

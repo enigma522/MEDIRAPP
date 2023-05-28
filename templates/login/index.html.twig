@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css" >
+    <title>MEDIRAPP</title>
+</head>
+<body class="full" style="background: rgb(19,124,139);
+background: linear-gradient(135deg, rgba(19,124,139,1) 56%, rgba(221,196,196,1) 93%);background: cover; width: 100vw;
+  height: 100vh;">
+  <div class="text-center container mt-2"><a href={{path('app_about_us')}}> <img src="logo/logo.png" class="w-25 h-50"/></a></div>
+        <div  class="row  d-flex flex-wrap scrollable overflow-auto  text-start position-absolute top-50 start-50 translate-middle
+   w-75 h-75 shadow bg-body p-0 mt-2" style="border-radius:15px;height: 90%;.scrollable::-webkit-scrollbar {
+  display: none;
+}">
+     
+            <div class="col-md-6  p-0" style="filter: blur(6px);-webkit-filter: blur(6px);" >
+                <img src="https://aanmc.org/wp-content/uploads/2017/05/Becoming-an-ND.jpg"
+                class="w-100 rounded h-100 object-cover" style="min-width: 180px">
+            </div>
+            <div class="col-md-6 d-flex container justify-content-center align-items-center overflow-hidden overflow-sm-visible" style="min-width: 256px">
+                {%block login %}{% endblock %}
+            </div>
+        </div>
+
+
+</body>
+</html>

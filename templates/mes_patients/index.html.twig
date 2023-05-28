@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Patients!{% endblock %}
+
+
+{% block style %}
+     <link rel="stylesheet" href="css/styleMedPat.css">   
+{% endblock %}
+
+{% block root %}
+        <input type=hidden id="pat_id" value="{{app.session.get('id')}}"/>
+
+
+        <div class="card-group" id="group"  style="position: relative;"></div>
+        <script src="js/scriptPat.js"></script> 
+
+
+{% endblock %}
+

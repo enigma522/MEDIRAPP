@@ -1,0 +1,102 @@
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styleContact.css">
+
+
+</head>
+
+<body>
+
+  <div class="container">
+        <div class=" text-center mt-5 ">
+
+            <h1 >Contactez nous!</h1>
+                
+            
+        </div>
+
+    
+    <div class="row ">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+       
+            {{form_start(form)}}
+            <form id="contact-form" role="form">
+
+            
+
+            <div class="controls">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                           {{form_row(form.nom,{'attr':{'class':'form-control'}})}}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                           {{form_row(form.prenom,{'attr':{'class':'form-control'}})}}
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="padding-left: 15px;">
+                           {{form_row(form.email,{'attr':{'class':'form-control'}})}}
+                        </div>
+                    </div>
+                   
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                           {{form_row(form.message, {'attr':{'class':'form-control big input','rows': 5}})}}      
+                     <div class="col-md-12">
+                        <br>
+                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block " value="Envoyer" >
+
+                    
+                     </div>
+                        </div>
+
+                        </div>
+                        {{form_end(form)}}
+
+
+              
+          
+                </div>
+
+
+        </div>
+         </form>
+        </div>
+            </div>
+
+
+    </div>
+
+    </div>
+
+</div>
+</div>
+
+</body>
+
+</html>
+{% endblock %}

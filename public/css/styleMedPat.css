@@ -1,0 +1,53 @@
+.card {
+  width: 80%;
+  transition: transform 0.5s ease-in-out;
+  margin:20px;
+}
+
+
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.column {
+    float: left;
+    width: 33%;
+    /*width: calc(100% / 3); */
+
+}
+
+.row {
+    margin: 0 -5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+a.button{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #8c91ab;
+  color: #fff;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  margin-left: 10px;
+}
+ a.button:hover {
+  background-color: #0062cc;
+  color: #fff;
+}
